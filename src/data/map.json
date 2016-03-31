@@ -1,0 +1,100 @@
+{
+    "type" : "map",
+    "size": {
+        "x" : 3,
+        "y" : 3
+    },
+    "locations" : [
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        },
+        {
+            "name" : "rock",
+            "type": "location",
+            "walkable" : false
+        },
+        {
+            "name" : "plain",
+            "type": "location",
+            "appearance" :{
+                "description" : "A lush green grass surrounds you"
+            },
+            "walkable" : true,
+            "items" : [
+                {
+                    "name" : "chest",
+                    "type" : "container",
+                    "appearance" :{
+                        "description" : "An old worm-eaten wooden chest"
+                   },
+                    "capacity" : 10,
+                    "items" : [
+                        {
+                            "name" : "sword",
+                            "type" : "weapon",
+                            "weight" : 4,
+                            "attack" : 5,
+                            "block" : 1
+                        },
+                        {
+                            "name" : "helmet",
+                            "type" : "armour",
+                            "weight" : 3,
+                            "block" : 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        },
+        {
+            "name" : "rock",
+            "type": "location",
+            "walkable" : false
+        },
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        },
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        },
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        },
+        {
+            "name" : "desert",
+            "type": "location",
+            "appearance" :{
+                "description" : "Sand all around you, not a single plant grows here, not a single drop of water for a log time touched this cursed land"
+            },
+            "walkable" : true
+        }
+    ]
+}
