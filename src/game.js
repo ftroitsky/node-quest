@@ -12,32 +12,27 @@ map.setTile(2,2);
 
 var player = new Player(map);
 console.log(map);
-// player.location = player.map.getTile(0, 0);
+
 console.log(player.look());
 console.log(player.X);
 console.log(player.Y);
 
-// console.log(player.map.getTile(0, 2));
-
-// console.log(player.look());
-//
 player.walk('SOUTH');
-// player.Y = player.Y+1;
 console.log(player.look());
 console.log(player.X);
 console.log(player.Y);
-//
-// player.walk('SOUTH');
-// console.log(player.look());
-// console.log(player.X);
-// console.log(player.Y);
-//
-// player.walk('EAST');
-// console.log(player.look());
-// console.log(player.X);
-// console.log(player.Y);
-//
-// player.walk('EAST');
-// console.log(player.look());
-// console.log(player.X);
-// console.log(player.Y);
+
+player.walk('SOUTH');
+console.log(player.look());
+console.log(player.X);
+console.log(player.Y);
+
+player.walk('EAST');
+console.log(player.look());
+console.log(player.X);
+console.log(player.Y);
+
+player.walk('EAST');
+console.log(player.look());
+console.log(player.X);
+console.log(player.Y);

@@ -14,7 +14,7 @@ export default class Player {
 
         this.X = x;
         this.Y = y;
-        this.map = map;
+        this.Map = map;
         this.location = map.getTile(x, y);
     }
 
@@ -52,34 +52,29 @@ export default class Player {
 
     walk(direction) {
 
-        const goTo = (tile, x, y) => {
-            return tile ? ()=> {
-                this.X = x;
-                this.Y = y;
-            } : false;
+        const goTo = (x, y) => {
+            this.X = x;
+            this.Y = y;
+            this.location = this.Map.getTile(this.X, this.Y);
         };
-
+        
+        const noWay = (direction) => {
+            
+        };
+        
         switch (direction) {
             case 'NORTH':
-                return goTo(
-                    this.location.north,
-                    this.X, this.Y-1
-                );
+                return this.location.north ?
+                    goTo(this.X, this.Y - 1) : false;
             case 'SOUTH':
-                return goTo(
-                    this.location.south,
-                    this.X, this.Y+1
-                );
+                return this.location.south ?
+                    goTo(this.X, this.Y+1) : false;
             case 'EAST':
-                return goTo(
-                    this.location.east,
-                    this.X+1, this.Y
-                );
+                return this.location.east ?
+                    goTo(this.X+1, this.Y) : false;
             case 'WEST':
-                return goTo(
-                    this.location.west,
-                    this.X-1, this.Y
-                );
+                return this.location.west ?
+                    goTo(this.X-1, this.Y) : false;
         }
 
     }
