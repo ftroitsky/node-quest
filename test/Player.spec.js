@@ -17,95 +17,95 @@ var player = new Player(map);
 
 describe("Player moving around map", () => {
     it("Player should be able to tell current position", () => {
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.X).to.eql(0);
-        expect(player.Y).to.eql(0);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(0);
+        expect(player.Y).to.equal(0);
     });
 
     it("Player should be able to tell correct exits", () => {
-        expect(player.look().north).to.eql(false);
-        expect(player.look().south.constructor.name).to.eql('Tile');
-        expect(player.look().east).to.eql(false);
-        expect(player.look().west).to.eql(false);
+        expect(player.look().north).to.not.be.ok;
+        expect(player.look().south.constructor.name).to.equal('Tile');
+        expect(player.look().east).to.not.be.ok;
+        expect(player.look().west).to.not.be.ok;
     });
 
     it("Player should be able to walk south", () => {
         player.walk('SOUTH');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north.constructor.name).to.eql('Tile');
-        expect(player.look().south.constructor.name).to.eql('Tile');
-        expect(player.look().east).to.eql(false);
-        expect(player.look().west).to.eql(false);
-        expect(player.X).to.eql(0);
-        expect(player.Y).to.eql(1);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north.constructor.name).to.equal('Tile');
+        expect(player.look().south.constructor.name).to.equal('Tile');
+        expect(player.look().east).to.not.be.ok;
+        expect(player.look().west).to.not.be.ok;
+        expect(player.X).to.equal(0);
+        expect(player.Y).to.equal(1);
 
         player.walk('SOUTH');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north.constructor.name).to.eql('Tile');
-        expect(player.look().south).to.eql(false);
-        expect(player.look().east.constructor.name).to.eql('Tile');
-        expect(player.look().west).to.eql(false);
-        expect(player.X).to.eql(0);
-        expect(player.Y).to.eql(2);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north.constructor.name).to.equal('Tile');
+        expect(player.look().south).to.not.be.ok;
+        expect(player.look().east.constructor.name).to.equal('Tile');
+        expect(player.look().west).to.not.be.ok;
+        expect(player.X).to.equal(0);
+        expect(player.Y).to.equal(2);
     });
 
     it("Player should be able to walk east", () => {
         player.walk('EAST');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north).to.eql(false);
-        expect(player.look().south).to.eql(false);
-        expect(player.look().east.constructor.name).to.eql('Tile');
-        expect(player.look().west.constructor.name).to.eql('Tile');
-        expect(player.X).to.eql(1);
-        expect(player.Y).to.eql(2);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north).to.not.be.ok;
+        expect(player.look().south).to.not.be.ok;
+        expect(player.look().east.constructor.name).to.equal('Tile');
+        expect(player.look().west.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(1);
+        expect(player.Y).to.equal(2);
 
         player.walk('EAST');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north).to.eql(false);
-        expect(player.look().south).to.eql(false);
-        expect(player.look().east.constructor.name).to.eql('Tile');
-        expect(player.look().west.constructor.name).to.eql('Tile');
-        expect(player.X).to.eql(2);
-        expect(player.Y).to.eql(2);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north).to.not.be.ok;
+        expect(player.look().south).to.not.be.ok;
+        expect(player.look().east.constructor.name).to.equal('Tile');
+        expect(player.look().west.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(2);
+        expect(player.Y).to.equal(2);
 
         player.walk('EAST');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north.constructor.name).to.eql('Tile');
-        expect(player.look().south).to.eql(false);
-        expect(player.look().east).to.eql(false);
-        expect(player.look().west.constructor.name).to.eql('Tile');
-        expect(player.X).to.eql(3);
-        expect(player.Y).to.eql(2);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north.constructor.name).to.equal('Tile');
+        expect(player.look().south).to.not.be.ok;
+        expect(player.look().east).to.not.be.ok;
+        expect(player.look().west.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(3);
+        expect(player.Y).to.equal(2);
     });
 
     it("Player should be able to walk north", () => {
         player.walk('NORTH');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north.constructor.name).to.eql('Tile');
-        expect(player.look().south.constructor.name).to.eql('Tile');
-        expect(player.look().east).to.eql(false);
-        expect(player.look().west).to.eql(false);
-        expect(player.X).to.eql(3);
-        expect(player.Y).to.eql(1);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north.constructor.name).to.equal('Tile');
+        expect(player.look().south.constructor.name).to.equal('Tile');
+        expect(player.look().east).to.not.be.ok;
+        expect(player.look().west).to.not.be.ok;
+        expect(player.X).to.equal(3);
+        expect(player.Y).to.equal(1);
 
         player.walk('NORTH');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north).to.eql(false);
-        expect(player.look().south.constructor.name).to.eql('Tile');
-        expect(player.look().east).to.eql(false);
-        expect(player.look().west.constructor.name).to.eql('Tile');
-        expect(player.X).to.eql(3);
-        expect(player.Y).to.eql(0);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north).to.not.be.ok;
+        expect(player.look().south.constructor.name).to.equal('Tile');
+        expect(player.look().east).to.not.be.ok;
+        expect(player.look().west.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(3);
+        expect(player.Y).to.equal(0);
     });
 
     it("Player should be able to walk west", () => {
         player.walk('WEST');
-        expect(player.look().current.constructor.name).to.eql('Tile');
-        expect(player.look().north).to.eql(false);
-        expect(player.look().south).to.eql(false);
-        expect(player.look().east.constructor.name).to.eql('Tile');
-        expect(player.look().west).to.eql(false);
-        expect(player.X).to.eql(2);
-        expect(player.Y).to.eql(0);
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.look().north).to.not.be.ok;
+        expect(player.look().south).to.not.be.ok;
+        expect(player.look().east.constructor.name).to.equal('Tile');
+        expect(player.look().west).to.not.be.ok;
+        expect(player.X).to.equal(2);
+        expect(player.Y).to.equal(0);
     });
 });

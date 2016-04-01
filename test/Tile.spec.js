@@ -7,7 +7,7 @@ const tile = new Tile();
 describe('Tile', () => {
     it('Should have generic description', ()=> {
         expect(tile.description)
-            .to.eql('Generic tile');
+            .to.equal('Generic tile');
     });
 
     tile.storeObject({id: 1, name: 'something'});
