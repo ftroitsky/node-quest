@@ -108,4 +108,19 @@ describe("Player moving around map", () => {
         expect(player.X).to.equal(2);
         expect(player.Y).to.equal(0);
     });
+
+    it("Player should not be able to walk on empty tile", () => {
+        player.walk('WEST');
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(2);
+        expect(player.Y).to.equal(0);
+    });
+
+    it("Player should not be able to walk off the map", () => {
+        player.walk('NORTH');
+        expect(player.look().current.constructor.name).to.equal('Tile');
+        expect(player.X).to.equal(2);
+        expect(player.Y).to.equal(0);
+    });
+
 });
