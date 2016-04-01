@@ -10,7 +10,7 @@ import { matrix, withinRange } from './helpers/utils';
 import Tile from './Tile';
 
 export default class Map {
-    constructor(x, y) {
+    constructor(x = 5, y = 5) {
         this.bufferX = x;
         this.bufferY = y;
 
