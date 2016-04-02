@@ -5,6 +5,7 @@
  * @param {int} x — horizontal coordinate of tile
  * @param {int} y — vertical coordinate of tile
  * */
+import colors from 'colors';
 
 export default class Player {
     constructor(map, x = 0, y = 0) {
@@ -61,7 +62,7 @@ export default class Player {
         };
         
         const noWay = (direction) => {
-            console.log(`Can't go ${direction.toLowerCase()}`);
+            console.log(`Can't go ${direction.toLowerCase()}`.red);
             return false;
         };
         
