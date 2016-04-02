@@ -17,6 +17,6 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "colors": "^1.1.2",
+    "colors": "^1.1.2"
   }
 }
