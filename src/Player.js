@@ -39,15 +39,17 @@ export default class Player {
     }
 
     look() {
-        // const l = this.location;
-        // let exits = [];
-        // if (l.north) exits.push('n');
-        // if (l.south) exits.push('s');
-        // if (l.east) exits.push('e');
-        // if (l.west) exits.push('w');
-        // return  exits;
+        const l = this.location;
+        let exits = [];
+        if (l.north) exits.push('n');
+        if (l.south) exits.push('s');
+        if (l.west) exits.push('w');
+        if (l.east) exits.push('e');
+        return  {
+            where: l.current.description,
+            exits: exits.join("")
+        };
         // return this.map;
-        return this.location;
     }
 
     walk(direction) {
@@ -59,22 +61,23 @@ export default class Player {
         };
         
         const noWay = (direction) => {
-            
+            console.log(`Can't go ${direction.toLowerCase()}`);
+            return false;
         };
         
         switch (direction) {
             case 'NORTH':
                 return this.location.north ?
-                    goTo(this.X, this.Y - 1) : false;
+                    goTo(this.X, this.Y - 1) : noWay(direction);
             case 'SOUTH':
                 return this.location.south ?
-                    goTo(this.X, this.Y+1) : false;
+                    goTo(this.X, this.Y+1) : noWay(direction);
             case 'EAST':
                 return this.location.east ?
-                    goTo(this.X+1, this.Y) : false;
+                    goTo(this.X+1, this.Y) : noWay(direction);
             case 'WEST':
                 return this.location.west ?
-                    goTo(this.X-1, this.Y) : false;
+                    goTo(this.X-1, this.Y) : noWay(direction);
         }
 
     }

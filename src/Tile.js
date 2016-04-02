@@ -9,9 +9,9 @@
  */
 
 export default class Tile {
-    constructor() {
+    constructor(description = 'Generic tile') {
         /** Description of the tile */
-        this.description = 'Generic tile';
+        this.description = description;
         /** The objects array — contains all objects on the tile */
         this.objects = [];
     }

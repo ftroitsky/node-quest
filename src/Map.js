@@ -18,14 +18,13 @@ export default class Map {
         this.tiles = matrix(this.bufferX, this.bufferY, false);
     }
 
-    setTile(x, y) {
+    setTile(x, y, description) {
         const X = this.bufferX;
         const Y = this.bufferY;
 
         if (withinRange(x, 0, X) && withinRange(y, 0, Y)) {
-            return this.tiles[y][x] = new Tile();
+            return this.tiles[y][x] = new Tile(description);
         }
-        console.warn(`Map: adding out of boundary (${X}x${Y}). Target is ${x}.${y}`);
         return false;
     }
     
@@ -40,7 +39,6 @@ export default class Map {
         };
 
         if (!withinRange(x, 0, X) || !withinRange(y, 0, Y)) {
-            console.warn(`Map: reading out of boundary (${X}x${Y}). Target is ${x}.${y}`);
             return false;
         }
 
