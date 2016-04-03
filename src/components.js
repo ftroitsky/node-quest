@@ -10,9 +10,8 @@ export class ComponentPosition {
 
 export class ComponentDescription {
     constructor(description = 'Generic description'){
-        this.text = description;
+        this.value = description;
     }
-
     static get name () {
         return 'description';
     }

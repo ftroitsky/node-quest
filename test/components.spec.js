@@ -25,14 +25,14 @@ describe('Component Position', () => {
         expect(description.constructor.name).to.equal('description');
     });
 
-    it('Should have value `text` not empty', ()=> {
+    it('Should have property `value` not empty', ()=> {
         expect(description)
-            .to.have.property('text').to.equal('Awesome');
+            .to.have.property('value').to.equal('Awesome');
     });
 
     const description2 = new ComponentDescription();
     it('Should handle empty input', ()=> {
         expect(description2)
-            .to.have.property('text').to.be.not.empty;
+            .to.have.property('value').to.be.not.empty;
     });
 });
