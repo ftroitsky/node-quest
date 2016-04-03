@@ -28,21 +28,18 @@ export default class Entity {
     }
 
     addComponent ( component ){
-        this.components[component.name] = component;
+        this.components[component.constructor.name] = component;
+        return this.components;
     }
 
     removeComponent ( componentName ) {
-        // Remove component data by removing the reference to it.
-        // Allows either a component function or a string of a component name to be
-        // passed in
-        let name = componentName; // assume a string was passed in
+        let name = componentName;
 
-        if(typeof componentName === 'function'){
-            // get the name from the prototype of the passed component function
-            name = componentName.prototype.name;
+        if(typeof componentName === 'object'){
+            name = componentName.constructor.name;
         }
-
         delete this.components[name];
+        return this.components;
     }
 
     print () {
