@@ -14,6 +14,7 @@ describe('Matrix function for 2d arrays', () => {
     expect(map[1][1]).to.be.ok
     expect(map[0][1]).to.be.ok
   })
+
   it(`should respect boundaries (bufferX: ${bufferX}, bufferY: ${bufferY})`,
     () => {
       expect(map[0][2]).to.not.be.ok
@@ -25,9 +26,11 @@ describe('Value should be within range', () => {
   it('5 should be within range of 6', () => {
     expect(withinRange(5, 0, 6)).to.be.ok
   })
+
   it('0 should be within range of 6', () => {
     expect(withinRange(0, 0, 6)).to.be.ok
   })
+
   it('6 should not be within range of 6', () => {
     expect(withinRange(6, 0, 6)).to.not.be.ok
   })

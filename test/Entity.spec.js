@@ -19,9 +19,11 @@ describe('Entity', () => {
   it('Global counter should increment when new entity added', () => {
     expect(Entity.count).to.equal(3)
   })
+
   it('Id should not be empty', () => {
     expect(entity1).to.have.property('id').to.be.not.empty
   })
+
   it('Should handle addition of new components', () => {
     expect(entity2).to.have.property('components')
       .to.include.keys('position', 'description')
