@@ -4,45 +4,45 @@
  */
 
 export default class Entity {
-    constructor() {
-        Entity.count++;
-        this.genID();
-        this.components = {};
-    }
+  constructor () {
+    Entity.count++
+    this.genID()
+    this.components = {}
+  }
 
-    static get count() {
-        return !this._count ? 0 : this._count;
-    }
+  static get count () {
+    return !this._count ? 0 : this._count
+  }
 
-    static set count(value){
-        this._count = value;
-    }
+  static set count (value) {
+    this._count = value
+  }
 
-    genID () {
-        this._id = (+new Date()).toString(16) +
-            (Math.random() * 100000000 | 0).toString(16) + Entity.count;
-    }
+  genID () {
+    this._id = (+new Date()).toString(16) +
+      (Math.random() * 100000000 | 0).toString(16) + Entity.count
+  }
 
-    get id () {
-        return this._id;
-    }
+  get id () {
+    return this._id
+  }
 
-    addComponent ( component ){
-        this.components[component.constructor.name] = component;
-        return this.components;
-    }
+  addComponent (component) {
+    this.components[component.constructor.name] = component
+    return this.components
+  }
 
-    removeComponent ( componentName ) {
-        let name = componentName;
+  removeComponent (componentName) {
+    let name = componentName
 
-        if(typeof componentName === 'object'){
-            name = componentName.constructor.name;
-        }
-        delete this.components[name];
-        return this.components;
+    if (typeof componentName === 'object') {
+      name = componentName.constructor.name
     }
+    delete this.components[name]
+    return this.components
+  }
 
-    print () {
-        console.log(JSON.stringify(this, null, 4));
-    }
+  print () {
+    console.log(JSON.stringify(this, null, 4))
+  }
 }
