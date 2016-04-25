@@ -22,7 +22,7 @@ var player = new Player(map)
 process.stdout.write('\u001B[2J\u001B[0;0f')
 
 console.log('Hello & welcome to The Quest.'.yellow)
-console.log(`Check prompt for exits (${'nswe'.green}). Type exit letter to move around.`)
+console.log(`Check prompt for exits (${'n'.green}orth, ${'s'.green}outh, ${'e'.green}ast ${'w'.green}est). Type exit letter to move around.`)
 console.log(`____________\n`)
 
 console.log(player.look().where)
